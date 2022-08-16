@@ -1,0 +1,16 @@
+.Header {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.Header .city-name {
+  color: #000;
+  display: block;
+  font-size: 80px;
+  font-weight: 500;
+}
+
+.Header .date-time {
+  color: #848282;
+  font-size: 15px;
+}

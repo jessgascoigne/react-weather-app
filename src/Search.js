@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import Header from "./Header";
 import "./Search.css";
 
 export default function Search(props) {
@@ -37,29 +37,33 @@ export default function Search(props) {
     const apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(getWeather);
   }
+
   if (weatherData.ready) {
     return (
-      <div className="search-wrapper">
-        <form className="search-form" onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-8">
-              <input
-                type="search"
-                className="search-input form-control"
-                placeholder="Search for a city..."
-                autoFocus="on"
-                onChange={handleCitySearch}
-              />
+      <div className="Search">
+        <Header data={weatherData.city} />
+        <div className="search-wrapper">
+          <form className="search-form" onSubmit={handleSubmit}>
+            <div className="row">
+              <div className="col-8">
+                <input
+                  type="search"
+                  className="search-input form-control"
+                  placeholder="Search for a city..."
+                  autoFocus="on"
+                  onChange={handleCitySearch}
+                />
+              </div>
+              <div className="col-4">
+                <input
+                  type="submit"
+                  className="search form-control"
+                  value="Search"
+                />
+              </div>
             </div>
-            <div className="col-4">
-              <input
-                type="submit"
-                className="search form-control"
-                value="Search"
-              />
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     );
   } else {
