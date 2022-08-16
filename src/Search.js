@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
-import CurrentTemp from "./CurrentTemp";
 import CurrentWeather from "./CurrentWeather";
 import "./Search.css";
 
@@ -45,7 +44,25 @@ export default function Search(props) {
       <div className="Search">
         <h1 className="city-name">{weatherData.city}</h1>
         <FormattedDate />
-        <CurrentTemp data={weatherData} />
+        <div className="row current-temp-container">
+          <div className="col-6 temp-column">
+            <h5 className="current-temp">
+              {Math.round(weatherData.temperature)}
+            </h5>
+          </div>
+          <div className="col-6 units-column">
+            <h5>
+              <a href="/" className="fahrenheit active-link">
+                °F
+              </a>
+            </h5>
+            <h5>
+              <a href="/" className="celsius non-active-link">
+                °C
+              </a>
+            </h5>
+          </div>
+        </div>
         <CurrentWeather data={weatherData} />
         <div className="search-wrapper">
           <form className="search-form" onSubmit={handleSubmit}>
