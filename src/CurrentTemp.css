@@ -1,0 +1,44 @@
+.CurrentTemp .current-temp-container {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+  max-height: 150px;
+  padding-bottom: 15px;
+}
+.CurrentTemp .current-temp {
+  color: #2a2a2a;
+  display: block;
+  font-size: 90px;
+  font-weight: 500;
+  margin: 0 auto;
+}
+
+.CurrentTemp .fahrenheit,
+.CurrentTemp .celsius {
+  border: none;
+  cursor: pointer;
+  left: 90px;
+  position: relative;
+  text-decoration: none;
+  top: -90px;
+  transition: all 150ms ease-in-out;
+}
+
+.CurrentTemp .active-link {
+  color: #000;
+  font-size: 22px;
+  font-weight: 600;
+}
+.CurrentTemp .active-link:hover {
+  color: #000;
+  cursor: default;
+}
+.CurrentTemp .non-active-link {
+  color: #848282;
+  font-size: 18px;
+  font-weight: 300;
+}
+.CurrentTemp .non-active-link:hover {
+  color: #000;
+  font-size: 22px;
+}

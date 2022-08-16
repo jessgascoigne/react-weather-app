@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Header from "./Header";
+import CurrentTemp from "./CurrentTemp";
 import "./Search.css";
 
 export default function Search(props) {
@@ -42,6 +43,7 @@ export default function Search(props) {
     return (
       <div className="Search">
         <Header data={weatherData.city} />
+        <CurrentTemp data={weatherData} />
         <div className="search-wrapper">
           <form className="search-form" onSubmit={handleSubmit}>
             <div className="row">
