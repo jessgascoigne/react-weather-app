@@ -1,0 +1,32 @@
+.search-wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: 350px;
+}
+.Search .search-form {
+  padding: 15px 0;
+}
+.Search .search-input,
+.Search .search,
+.Search .current-city {
+  background: #fff;
+  border: 1px solid rgb(136, 201, 214, 0.7);
+}
+.Search .search-input.form-control,
+.Search .search.form-control {
+  box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+  color: #888888;
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+.Search .search:hover {
+  background: #f7f5ef;
+  color: #000;
+  cursor: pointer;
+  font-weight: 400;
+}
