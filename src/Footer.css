@@ -1,0 +1,19 @@
+.Footer {
+  color: #888888;
+  font-size: 15px;
+  font-weight: 200;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.Footer .github-repo-link {
+  color: #1f91a8;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+.Footer .github-repo-link:hover {
+  color: #1f91a8;
+  font-weight: 300;
+}
