@@ -31,7 +31,7 @@ export default function FormattedDate() {
   const month = months[current.getMonth()];
   const date = current.getDate();
   let hour = current.getHours();
-  let timestamp = hour >= 12 ? "PM" : "AM";
+  const timestamp = hour >= 12 ? "PM" : "AM";
   if (hour === 0) {
     hour = 12;
   } else if (hour >= 13) {
