@@ -9,7 +9,7 @@ export default function CurrentWeather(props) {
         <div className="col-6">
           <img
             src={`./images/${props.data.icon}.png`}
-            alt="current weather icon"
+            alt={props.data.description}
             className="current-weather-image"
           />
         </div>
