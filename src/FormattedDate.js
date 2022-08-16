@@ -1,7 +1,7 @@
 import React from "react";
-import "./Header.css";
+import "./FormattedDate.css";
 
-export default function Header(props) {
+export default function FormattedDate() {
   const weekDays = [
     "Sunday",
     "Monday",
@@ -44,8 +44,7 @@ export default function Header(props) {
   }
 
   return (
-    <div className="Header">
-      <h1 className="city-name">{props.data}</h1>
+    <div className="FormattedDate">
       <h3 className="date-time">
         {weekday} | {month} {date} | {hour}:{minutes} {timestamp}
       </h3>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Header from "./Header";
+import FormattedDate from "./FormattedDate";
 import CurrentTemp from "./CurrentTemp";
 import CurrentWeather from "./CurrentWeather";
 import "./Search.css";
@@ -43,7 +43,8 @@ export default function Search(props) {
   if (weatherData.ready) {
     return (
       <div className="Search">
-        <Header data={weatherData.city} />
+        <h1 className="city-name">{weatherData.city}</h1>
+        <FormattedDate />
         <CurrentTemp data={weatherData} />
         <CurrentWeather data={weatherData} />
         <div className="search-wrapper">
