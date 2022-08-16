@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
-import CurrentWeather from "./CurrentWeather";
 import "./Search.css";
 
 export default function Search(props) {
@@ -63,7 +62,27 @@ export default function Search(props) {
             </h5>
           </div>
         </div>
-        <CurrentWeather data={weatherData} />
+        <div className="row">
+          <div className="col-6">
+            <img
+              src={`./images/${weatherData.icon}.png`}
+              alt={weatherData.description}
+              className="current-weather-image"
+            />
+          </div>
+          <div className="col-6">
+            <ul>
+              <li className="feels-like-temp">
+                feels like: {Math.round(weatherData.feelsLike)}℉
+              </li>
+              <li className="humidity">humidity: {weatherData.humidity}%</li>
+              <li className="wind">wind: {Math.round(weatherData.wind)} mph</li>
+              <li className="current-weather-conditions">
+                {weatherData.description}
+              </li>
+            </ul>
+          </div>
+        </div>
         <div className="search-wrapper">
           <form className="search-form" onSubmit={handleSubmit}>
             <div className="row">
