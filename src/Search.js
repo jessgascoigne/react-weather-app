@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import CurrentTemp from "./CurrentTemp";
 import "./Search.css";
 
 export default function Search(props) {
@@ -33,8 +34,7 @@ export default function Search(props) {
   function searchCity() {
     const apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
     const apiKey = "6e2f14a60b2f5be57b160a6148235b2f";
-    let units = "imperial";
-    const apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${units}`;
+    const apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(getWeather);
   }
 
@@ -43,25 +43,7 @@ export default function Search(props) {
       <div className="Search">
         <h1 className="city-name">{weatherData.city}</h1>
         <FormattedDate />
-        <div className="row current-temp-container">
-          <div className="col-6 temp-column">
-            <h5 className="current-temp">
-              {Math.round(weatherData.temperature)}
-            </h5>
-          </div>
-          <div className="col-6 units-column">
-            <h5>
-              <a href="/" className="fahrenheit active-link">
-                °F
-              </a>
-            </h5>
-            <h5>
-              <a href="/" className="celsius non-active-link">
-                °C
-              </a>
-            </h5>
-          </div>
-        </div>
+        <CurrentTemp data={weatherData} />
         <div className="row">
           <div className="col-6">
             <img
