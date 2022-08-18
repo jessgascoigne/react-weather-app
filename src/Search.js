@@ -36,7 +36,6 @@ export default function Search(props) {
     const apiKey = "6e2f14a60b2f5be57b160a6148235b2f";
     const apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(getWeather);
-    console.log(apiUrl);
   }
 
   if (weatherData.ready) {
