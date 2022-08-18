@@ -36,6 +36,7 @@ export default function Search(props) {
     const apiKey = "6e2f14a60b2f5be57b160a6148235b2f";
     const apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(getWeather);
+    console.log(apiUrl);
   }
 
   if (weatherData.ready) {
@@ -44,27 +45,6 @@ export default function Search(props) {
         <h1 className="city-name">{weatherData.city}</h1>
         <FormattedDate />
         <CurrentTemp data={weatherData} />
-        <div className="row">
-          <div className="col-6">
-            <img
-              src={`./images/${weatherData.icon}.png`}
-              alt={weatherData.description}
-              className="current-weather-image"
-            />
-          </div>
-          <div className="col-6">
-            <ul>
-              <li className="feels-like-temp">
-                feels like: {Math.round(weatherData.feelsLike)}℉
-              </li>
-              <li className="humidity">humidity: {weatherData.humidity}%</li>
-              <li className="wind">wind: {Math.round(weatherData.wind)} mph</li>
-              <li className="current-weather-conditions">
-                {weatherData.description}
-              </li>
-            </ul>
-          </div>
-        </div>
         <div className="search-wrapper">
           <form className="search-form" onSubmit={handleSubmit}>
             <div className="row">

@@ -45,6 +45,27 @@ export default function CurrentTemp(props) {
             </h5>
           </div>
         </div>
+        <div className="row">
+          <div className="col-6">
+            <img
+              src={`./images/${props.data.icon}.png`}
+              alt={props.data.description}
+              className="current-weather-image"
+            />
+          </div>
+          <div className="col-6">
+            <ul>
+              <li className="feels-like-temp">
+                feels like: {Math.round(props.data.feelsLike)}℉
+              </li>
+              <li className="humidity">humidity: {props.data.humidity}%</li>
+              <li className="wind">wind: {Math.round(props.data.wind)} mph</li>
+              <li className="current-weather-conditions">
+                {props.data.description}
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   } else {
@@ -71,6 +92,29 @@ export default function CurrentTemp(props) {
                 °C
               </a>
             </h5>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-6">
+            <img
+              src={`./images/${props.data.icon}.png`}
+              alt={props.data.description}
+              className="current-weather-image"
+            />
+          </div>
+          <div className="col-6">
+            <ul>
+              <li className="feels-like-temp">
+                feels like: {Math.round(((props.data.feelsLike - 32) * 5) / 9)}℃
+              </li>
+              <li className="humidity">humidity: {props.data.humidity}%</li>
+              <li className="wind">
+                wind: {Math.round(props.data.wind * 1.609344)} km/h
+              </li>
+              <li className="current-weather-conditions">
+                {props.data.description}
+              </li>
+            </ul>
           </div>
         </div>
       </div>

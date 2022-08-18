@@ -42,3 +42,26 @@
   color: #000;
   font-size: 22px;
 }
+
+.CurrentTemp .current-weather-image {
+  display: block;
+  left: 230px;
+  max-width: 160px;
+  position: relative;
+  top: -30px;
+}
+
+.CurrentTemp ul {
+  font-size: 15px;
+  margin: 0 auto;
+  max-height: 140px;
+  text-transform: lowercase;
+  padding: 0;
+}
+
+.CurrentTemp li {
+  display: block;
+  font-weight: 300;
+  margin-left: 50px;
+  text-align: left;
+}
