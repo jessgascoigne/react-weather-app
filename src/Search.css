@@ -39,3 +39,22 @@
   cursor: pointer;
   font-weight: 400;
 }
+
+.Search button.current-city {
+  border-radius: 30px;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+  color: #888888;
+  display: block;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0 auto;
+  padding: 6px 15px;
+  transition: all 200ms ease-in-out;
+}
+
+.Search .current-city:hover {
+  background: #f7f5ef;
+  color: #000;
+  cursor: pointer;
+  font-weight: 400;
+}

@@ -21,9 +21,20 @@ export default function Search(props) {
     });
   }
 
+  function getLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+  }
+
+  function searchCurrentLocation(position) {
+    const currentCoords = `lat=${position.coords.latitude}&lon=${position.coords.longitude}`;
+    searchCity(currentCoords);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
-    searchCity();
+    const searchCity = `q=${city}`;
+    searchCity(searchCity);
     event.target.reset();
   }
 
@@ -31,10 +42,10 @@ export default function Search(props) {
     setCity(event.target.value);
   }
 
-  function searchCity() {
+  function searchCity(location) {
     const apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
     const apiKey = "6e2f14a60b2f5be57b160a6148235b2f";
-    const apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=imperial`;
+    const apiUrl = `${apiEndpoint}${location}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(getWeather);
   }
 
@@ -66,6 +77,12 @@ export default function Search(props) {
             </div>
           </form>
         </div>
+        <button type="submit" className="current-city" onClick={getLocation}>
+          <span role="img" aria-label="location-pin">
+            📍
+          </span>{" "}
+          Current Location
+        </button>
       </div>
     );
   } else {
