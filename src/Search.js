@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import CurrentWeather from "./CurrentWeather";
+import Forecast from "./Forecast";
 import "./Search.css";
 
 export default function Search(props) {
@@ -18,6 +19,7 @@ export default function Search(props) {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
+      coords: response.data.coord,
     });
   }
 
@@ -84,6 +86,7 @@ export default function Search(props) {
           Current Location
         </button>
         <hr />
+        <Forecast coordinates={weatherData.coords} />
       </div>
     );
   } else {
