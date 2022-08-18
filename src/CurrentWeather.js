@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./CurrentTemp.css";
+import "./CurrentWeather.css";
 
 export default function CurrentTemp(props) {
   const [unit, setUnit] = useState("imperial");
@@ -17,7 +17,7 @@ export default function CurrentTemp(props) {
 
   if (unit === "imperial") {
     return (
-      <div className="CurrentTemp">
+      <div className="CurrentWeather">
         <div className="row current-temp-container">
           <div className="col-6 temp-column">
             <h5 className="current-temp">
@@ -70,7 +70,7 @@ export default function CurrentTemp(props) {
     );
   } else {
     return (
-      <div className="CurrentTemp">
+      <div className="CurrentWeather">
         <div className="row current-temp-container">
           <div className="col-6 temp-column">
             <h5 className="current-temp">

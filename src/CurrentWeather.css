@@ -1,4 +1,4 @@
-.CurrentTemp .current-temp-container {
+.CurrentWeather .current-temp-container {
   display: block;
   margin: 0 auto;
   max-width: 200px;
@@ -43,7 +43,7 @@
   font-size: 22px;
 }
 
-.CurrentTemp .current-weather-image {
+.CurrentWeather .current-weather-image {
   display: block;
   left: 230px;
   max-width: 160px;
@@ -51,7 +51,7 @@
   top: -30px;
 }
 
-.CurrentTemp ul {
+.CurrentWeather ul {
   font-size: 15px;
   margin: 0 auto;
   max-height: 140px;
@@ -59,7 +59,7 @@
   padding: 0;
 }
 
-.CurrentTemp li {
+.CurrentWeather li {
   display: block;
   font-weight: 300;
   margin-left: 50px;

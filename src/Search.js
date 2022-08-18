@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
-import CurrentTemp from "./CurrentTemp";
+import CurrentWeather from "./CurrentWeather";
 import "./Search.css";
 
 export default function Search(props) {
@@ -44,7 +44,7 @@ export default function Search(props) {
       <div className="Search">
         <h1 className="city-name">{weatherData.city}</h1>
         <FormattedDate />
-        <CurrentTemp data={weatherData} />
+        <CurrentWeather data={weatherData} />
         <div className="search-wrapper">
           <form className="search-form" onSubmit={handleSubmit}>
             <div className="row">
