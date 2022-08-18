@@ -10,9 +10,9 @@ export default function Footer() {
         target="_blank"
         rel="noreferrer"
       >
-        open source code by
+        open source code
       </a>{" "}
-      jess gascogine
+      by jess gascogine
     </div>
   );
 }
