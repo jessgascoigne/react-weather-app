@@ -83,6 +83,7 @@ export default function Search(props) {
           </span>{" "}
           Current Location
         </button>
+        <hr />
       </div>
     );
   } else {
