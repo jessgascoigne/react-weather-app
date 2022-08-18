@@ -33,8 +33,8 @@ export default function Search(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const searchCity = `q=${city}`;
-    searchCity(searchCity);
+    const searchedCity = `q=${city}`;
+    searchCity(searchedCity);
     event.target.reset();
   }
 
@@ -87,6 +87,6 @@ export default function Search(props) {
       </div>
     );
   } else {
-    searchCity();
+    searchCity(city);
   }
 }
